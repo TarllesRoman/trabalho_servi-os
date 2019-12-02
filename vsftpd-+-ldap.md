@@ -102,6 +102,11 @@ ldap_version 3
 base dc=base,dc=com
 
 ssl no
+
+binddn cn=usuario,dc=base,dc=com
+bindpw senha
+
+base shadow ou=Usuarios,dc=base,dc=com
 ```
 {% endcode %}
 
