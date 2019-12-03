@@ -171,7 +171,7 @@ O diretório cujo o caminho está especificado em _`local_root`_ dever ser criad
 Copie os arquivos padrões para o diretório home criado acima utilizando o comando: 
 
 ```text
-# cp /etc/skel/.bash* /home/rafael
+# cp /etc/skel/.bash* /home/$USER
 ```
 {% endhint %}
 
