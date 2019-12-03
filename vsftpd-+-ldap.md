@@ -141,8 +141,6 @@ anonymous_enable=NO
 local_enable=YES
 write_enable=YES
 local_umask=022
-anon_upload_enable=YES
-anon_mkdir_write_enable=YES
 dirmessage_enable=YES
 xferlog_enable=YES
 connect_from_port_20=YES
@@ -159,14 +157,22 @@ listen_ipv6=YES
 pam_service_name=vsftpd
 userlist_enable=YES
 tcp_wrappers=YES
-guest_enable=YES
 guest_username=ftp
-local_root=/home/ftp
+user_sub_token=$USER
+local_root=/home/$USER
 ```
 {% endcode %}
 
 {% hint style="info" %}
-O diretório cujo o caminho está especificado em _`local_root`_ dever ser criado manualmente.
+O diretório cujo o caminho está especificado em _`local_root`_ dever ser criado manualmente, para cada usuário que desejar se conectar ao servidor ftp.
+{% endhint %}
+
+{% hint style="danger" %}
+Copie os arquivos padrões para o diretório home criado acima utilizando o comando: 
+
+```text
+# cp /etc/skel/.bash* /home/rafael
+```
 {% endhint %}
 
 Se desejar que seu sevidor trabalhe com criptografia, acrescente também as configurações abaixo:
